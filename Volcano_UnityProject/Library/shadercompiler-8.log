@@ -1,0 +1,17 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-8-5704
+Cmd: getPlatforms
+Cmd: compileSnippet
+  error: 2 plat 8 at (23): maximum vs_4_0_level_9_1 sampler register index (0) exceeded - note that the target doesn't support texture sampling intrinsics
+  error: 1 plat 8 at (58): implicit truncation of vector type
+  error: 1 plat 8 at (71): implicit truncation of vector type
+  api=8 type=0 insize=2416 outsize=0 kw= ok=0
+Cmd: compileSnippet
+  error: 2 plat 8 at (23): maximum vs_4_0_level_9_1 sampler register index (0) exceeded - note that the target doesn't support texture sampling intrinsics
+  error: 1 plat 8 at (58): implicit truncation of vector type
+  error: 1 plat 8 at (71): implicit truncation of vector type
+  api=8 type=0 insize=2416 outsize=0 kw= ok=0
+Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+
+
+Quitting shader compiler process

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0014FB3-CFB3-5C0A-4DD5-618CEE6CC074}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.0.1f1</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="DarkArtsStudios.ScreenshotCreator.Runtime">
+      <HintPath>Assets\DarkArts Studios\Screenshot Creator\DarkArtsStudios.ScreenshotCreator.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\3d_clouds\scripts\unlitsh.shader" />
+    <None Include="Assets\AWSUnitySDK\AWSCore\Resources\aws-unity-sdk-version-1.0.5.txt" />
+    <None Include="Assets\AWSUnitySDK\AWSCore\Resources\aws_endpoints.xml" />
+    <None Include="Assets\AWSUnitySDK\S3\Resources\aws-unity-sdk-version-1.0.5.txt" />
+    <None Include="Assets\AltspaceVRLava\Shaders\LavaDisplacement.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Beta.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\HDR.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Lightmapping.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Material.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Mipmapped Gloss.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Scripting.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Shaders.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Sky Object.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Skyshop.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Terrain.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\Documentation\Vegetation.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\External\Lightmapping Extended\Presets\Built-in\High Quality.xml" />
+    <None Include="Assets\ArtDependencies\Marmoset\External\Lightmapping Extended\Presets\Built-in\Low Quality.xml" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Illumin\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Illumin\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Illumin\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Illumin\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetCore.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetDirect.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetInput.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetMobile.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetSurf.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetUber.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\MarmosetVertex.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Illumin\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Illumin\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Illumin\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Illumin\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Bumped Specular IBL Fast.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Specular IBL Fast.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Bumped Specular IBL Fast.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Specular IBL Fast.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Occlusion\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Simple Glass\Marmoset Bumped Specular Glow IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Simple Glass\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\Transparent\Simple Glass\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexColor\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexColor\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexColor\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexColor\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexOcclusion\Marmoset Bumped Diffuse Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexOcclusion\Marmoset Bumped Specular Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexOcclusion\Marmoset Diffuse Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Mobile\VertexOcclusion\Marmoset Specular Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Occlusion\Marmoset Bumped Diffuse Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Occlusion\Marmoset Bumped Specular Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Occlusion\Marmoset Diffuse Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Occlusion\Marmoset Specular Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Probe\Marmoset Projection Box.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Probe\Marmoset RGBM Blit.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Probe\Marmoset RGBM Convolve.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Probe\Marmoset RGBM Cube.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Probe\MarmosetConvolve.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Sky\Marmoset Skybox IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Sky\Marmoset Skydome IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Details\VertexLit.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Details\WavingGrass.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Details\WavingGrassBillboard.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Mobile Terrain Diffuse.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Mobile Terrain Specular.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Simple Add Pass.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Simple Distant.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Simple First Pass.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Terrain Add Pass.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Terrain Diffuse.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Terrain Distant.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\Marmoset Terrain Specular.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\MarmosetGrass.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\MarmosetSimpleTerrain.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\MarmosetTerrain.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\SoftOcclusion\SH_Vertex.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\SoftOcclusion\TreeSoftOcclusionBark.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\SoftOcclusion\TreeSoftOcclusionBarkRendertex.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\SoftOcclusion\TreeSoftOcclusionLeaves.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\SoftOcclusion\TreeSoftOcclusionLeavesRendertex.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeBark.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeBarkInput.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCore.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorBark.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorBarkOptimized.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorBarkRendertex.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorLeaves.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorLeavesFast.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorLeavesFastOptimized.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorLeavesOptimized.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeCreatorLeavesRendertex.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeLeaves.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeLeavesInput.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Terrain\TreeCreator\TreeVertexLit.cginc" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Cutout\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Cutout\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Cutout\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Cutout\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Simple Glass\Marmoset Bumped Specular Glow IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Simple Glass\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\Transparent\Simple Glass\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexColor\Marmoset Bumped Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexColor\Marmoset Bumped Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexColor\Marmoset Diffuse IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexColor\Marmoset Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexLit\Marmoset Vertex Lit IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexLit\Marmoset Vertex Lit Specular IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexLit\Marmoset Vertex Lit Specular Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexLit\Marmoset Vertex Lit Specular Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexOcclusion\Marmoset Bumped Diffuse Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexOcclusion\Marmoset Bumped Specular Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexOcclusion\Marmoset Diffuse Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\Shader\VertexOcclusion\Marmoset Specular Vertex Occ IBL.shader" />
+    <None Include="Assets\ArtDependencies\Marmoset\_ChangeLog.txt" />
+    <None Include="Assets\ArtDependencies\Marmoset\_Readme.txt" />
+    <None Include="Assets\Art_Effects\Skybox\sky5X\README.txt" />
+    <None Include="Assets\Art_Effects\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+    <None Include="Assets\Art_Effects\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+    <None Include="Assets\Art_Effects\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
+    <None Include="Assets\Art_Effects\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Diffuse\Compiled-Diffuse-nm-spec.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Diffuse\Compiled-Diffuse-nm.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Diffuse\Compiled-Diffuse-spec.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Diffuse\Compiled-Diffuse.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Emission\Compiled-Diffuse-emi.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Emission\Compiled-Diffuse-nm-emi.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Emission\Compiled-Diffuse-nm-spec-emi.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Emission\Compiled-Emission.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Self-Emission\Compiled-Diffuse-emi.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Self-Emission\Compiled-Diffuse-nm-emi.shader" />
+    <None Include="Assets\Art_Shaders\Animated Emission Shaders\Shader\Animated\Self-Emission\Compiled-Diffuse-nm-spec-emi.shader" />
+    <None Include="Assets\Art_Shaders\Lava_Flowing_Shader\ReadMe.txt" />
+    <None Include="Assets\Art_Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
+    <None Include="Assets\Art_Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
+    <None Include="Assets\Art_Shaders\Physical Shader.shader" />
+    <None Include="Assets\Art_Shaders\TransparentDoubleSided.shader" />
+    <None Include="Assets\Cardboard\Legacy\Resources\GUIScreen.shader" />
+    <None Include="Assets\Cardboard\Legacy\Resources\SkyboxMesh.shader" />
+    <None Include="Assets\Cardboard\Resources\RadialUndistortionEffect.shader" />
+    <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
+    <None Include="Assets\DarkArts Studios\Screenshot Creator\changes.txt" />
+    <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
+    <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
+    <None Include="Assets\EasyMovieTexture\readme.txt" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Legacy\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\donotdelete.txt" />
+    <None Include="Assets\Plugins\x86\donotdelete.txt" />
+    <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\Cubemaps.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\LightCone.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\LightWrapping.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\MaterialPlatform.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\Parallax.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\PixelRotator.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\TessellationDisplacement.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\Tiles.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
+    <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexColorRounding.shader" />
+    <None Include="Assets\ShaderForge\Readme.txt" />
+    <None Include="Assets\Sohail_LavaShader_Work\Shaders\HeatHaze.shader" />
+    <None Include="Assets\Sohail_LavaShader_Work\Shaders\HeatHazeBroken.shader" />
+    <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
+    <None Include="Assets\Tutorial_Assets\Models\Materials\DT_BumpedSpecular.shader" />
+    <None Include="Assets\Tutorial_Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>
