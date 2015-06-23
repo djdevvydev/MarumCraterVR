@@ -43,6 +43,7 @@ public class SightControl : MonoBehaviour
             {
                 case InteractableInfo.InteractableType.VideoPlay:
                     //Debug.Log("VideoScreen");
+                    currentTarget.GetComponentInParent<VideoScreen>().VideoScreenPlay();
                     currentTarget.GetComponentInParent<VideoScreen>().pauseButton.SetActive(true);
                     scanning = true;
                     break;
@@ -60,7 +61,6 @@ public class SightControl : MonoBehaviour
                     camFollowPathScript.targetPathPoint = targetPathPoint; //Tell the camera the target path point we want to hit
                     camFollowPathScript.cameraMoveAlongPath = true; //Start moving
                     //If a video is playing, stop playback
-                    SceneManager.instance.mediaPlayerCtrl.Stop();
                     SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().FadeVideoScreen();
                     //If audio is playing, stop playback
                     if (SceneManager.instance.audioManager.vrAudioSource.isPlaying)

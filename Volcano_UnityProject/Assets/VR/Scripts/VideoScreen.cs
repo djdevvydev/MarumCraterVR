@@ -5,7 +5,8 @@ public class VideoScreen : MonoBehaviour {
 
     [SerializeField]
     int screenNumber;
-
+    [SerializeField]
+    string fileToPlay;
     public GameObject playButton;
     public GameObject pauseButton;
     Vector3 currentScale;
@@ -57,10 +58,9 @@ public class VideoScreen : MonoBehaviour {
     //Called by SightControl.cs - used to start playback on the video
     public void VideoScreenPlay()
     {
-        //Use the array in SceneManager to populate the Video Player Manager's file name field
-        SceneManager.instance.mediaPlayerCtrl.m_strFileName = SceneManager.instance.videoFilePaths[screenNumber];
-        SceneManager.instance.mediaPlayerCtrl.m_TargetMaterial = gameObject; //Use this gameObject as the targetTexture for the video file
-        SceneManager.instance.mediaPlayerCtrl.Play();
+        SceneManager.instance.audioManager.vrAudioSource.Pause();
+        GetComponent<MediaPlayerCtrl>().Load(fileToPlay);
+        GetComponent<MediaPlayerCtrl>().Play();
         playButton.SetActive(false);
         pauseButton.SetActive(true);
         Debug.Log("Playing video on screen " + screenNumber);
@@ -69,8 +69,34 @@ public class VideoScreen : MonoBehaviour {
     public void VideoScreenPause()
     {
         Debug.Log("Paused video on screen " + screenNumber);
+        GetComponent<MediaPlayerCtrl>().Pause();
         playButton.SetActive(true);
         pauseButton.SetActive(false);
-        SceneManager.instance.mediaPlayerCtrl.Pause();
+//        SceneManager.instance.mediaPlayerCtrl.Pause();
     }
+
+    /*
+    void OnGUI()
+    {
+        string text;
+        switch(GetComponent<MediaPlayerCtrl>().GetCurrentState())
+        {
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.NOT_READY:
+                text = "Not Ready";
+                break;
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.ERROR:
+                text = "ERROR";
+                break;
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.PLAYING:
+                text = "PLAYING";
+                break;
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.STOPPED:
+                text = "STOPPED";
+                break;
+            default:
+                text = "FELL THROUGH TO DEFAULT";
+                break;
+        }
+        GUI.Box(new Rect(Screen.width /2 , Screen.height/2, 200, 30), text);
+    }*/
 }

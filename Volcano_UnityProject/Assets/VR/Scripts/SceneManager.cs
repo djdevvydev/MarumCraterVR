@@ -13,10 +13,8 @@ public class SceneManager : MonoBehaviour
 
     public bool fading;
 
-    public MediaPlayerCtrl mediaPlayerCtrl;
     public AudioManager audioManager;
 
-    public string[] videoFilePaths;
     public GameObject[] videoScreens;
 
     void Awake()
@@ -36,8 +34,6 @@ public class SceneManager : MonoBehaviour
             fadeOverlay = GameObject.Find("FadePanel").GetComponent<Image>();
         }
         StartCoroutine("FadeIn");
-        mediaPlayerCtrl.m_strFileName = videoFilePaths[audioManager.audioClipIndex];
-        mediaPlayerCtrl.m_TargetMaterial = videoScreens[audioManager.audioClipIndex];
 
         videoScreens[audioManager.audioClipIndex].SetActive(true);
         videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();

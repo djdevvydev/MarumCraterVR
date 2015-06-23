@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,6 +11,8 @@ public class CameraFollowPath : MonoBehaviour
 
     public int targetPathPoint = 0;
     public bool cameraMoveAlongPath = false;
+
+    public Image empStateBuilding;
 
     [SerializeField]
     SightControl sightControlScript;
@@ -61,17 +64,20 @@ public class CameraFollowPath : MonoBehaviour
                     transform.position = _currentPointOnPath.Current.position;
                     cameraMoveAlongPath = false;
                     sightControlScript.scanning = true;
+                    //Debug.Log("Reached our point!");
                     SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].SetActive(true);
                     SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
-                    SceneManager.instance.mediaPlayerCtrl.m_strFileName = SceneManager.instance.videoFilePaths[SceneManager.instance.audioManager.audioClipIndex];
-                    SceneManager.instance.mediaPlayerCtrl.m_TargetMaterial = SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex];
                     if (SceneManager.instance.audioManager.audioClipIndex != 0 && SceneManager.instance.narrationEnabled == true)
                     {
                         //Load up the LOCATION audio clip from the audioManager using the audioIndex
                         SceneManager.instance.audioManager.vrAudioSource.clip = SceneManager.instance.audioManager.locationAudioClips[SceneManager.instance.audioManager.audioClipIndex];
                         //Begin playing audio
                         SceneManager.instance.audioManager.vrAudioSource.Play();
-                        Debug.Log("Play LOCATION audio clip");
+//                        Debug.Log("Play LOCATION audio clip");
+                        if (SceneManager.instance.audioManager.audioClipIndex == 1)
+                        {
+                            StartCoroutine("EmpireStateBuilding");
+                        }
                     }
                 }
                 else
@@ -82,6 +88,24 @@ public class CameraFollowPath : MonoBehaviour
         }
 
         
-    }
+    }   
 	
+    IEnumerator EmpireStateBuilding()
+    {
+        yield return new WaitForSeconds(22.0F);
+        
+        while(empStateBuilding.fillAmount < 1)
+        {
+            empStateBuilding.fillAmount += (Time.deltaTime * 0.5f);
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSeconds(3.0F);
+        while (empStateBuilding.fillAmount > 0)
+        {
+            empStateBuilding.fillAmount -= (Time.deltaTime * 0.5f);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
 }

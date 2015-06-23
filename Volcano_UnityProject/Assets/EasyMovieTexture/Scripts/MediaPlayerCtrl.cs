@@ -99,7 +99,8 @@ public class MediaPlayerCtrl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Call_SetUnityActivity();
-
+		
+		SetVolume(0);
 
 #if UNITY_ANDROID
 		if (Application.dataPath.Contains(".obb")) {
@@ -449,7 +450,7 @@ public class MediaPlayerCtrl : MonoBehaviour {
 	{
 #if UNITY_ANDROID
 
-		Call_Reset();
+		//Call_Reset();
 	
 #endif
 		Call_UnLoad();
@@ -551,16 +552,6 @@ public class MediaPlayerCtrl : MonoBehaviour {
 		
 		m_strFileName = strFileName;
 		
-#if UNITY_ANDROID
-		
-	
-	
-		Call_Reset();
-		
-			
-		
-#endif
-		
 		
 #if UNITY_IPHONE
 		if (strFileName.StartsWith("http",StringComparison.OrdinalIgnoreCase))
@@ -653,7 +644,7 @@ public class MediaPlayerCtrl : MonoBehaviour {
 		m_bCheckFBO = false;
 #if UNITY_ANDROID
 	
-		Call_Reset();
+		//Call_Reset();
 #endif
 		Call_UnLoad();
 		
