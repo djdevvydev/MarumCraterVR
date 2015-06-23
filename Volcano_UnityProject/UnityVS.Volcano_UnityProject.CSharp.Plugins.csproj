@@ -228,7 +228,14 @@
     <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
     <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
     <None Include="Assets\EasyMovieTexture\readme.txt" />
+    <None Include="Assets\OVR\Moonlight\Materials\GlobalMenu\OVRCutoutRamp.shader" />
+    <None Include="Assets\OVR\Moonlight\Shaders\Unlit Crosshair.shader" />
+    <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
+    <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
+    <None Include="Assets\OVR\Shaders\Unlit Transparent HUD.shader" />
+    <None Include="Assets\Plugins\Android\AndroidManifest 1.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
     <None Include="Assets\Plugins\Legacy\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\donotdelete.txt" />
     <None Include="Assets\Plugins\x86\donotdelete.txt" />

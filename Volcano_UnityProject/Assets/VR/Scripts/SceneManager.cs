@@ -11,6 +11,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     Image fadeOverlay;
 
+    public bool fading;
+
     public MediaPlayerCtrl mediaPlayerCtrl;
     public AudioManager audioManager;
 
@@ -35,8 +37,11 @@ public class SceneManager : MonoBehaviour
         }
         StartCoroutine("FadeIn");
         mediaPlayerCtrl.m_strFileName = videoFilePaths[audioManager.audioClipIndex];
-        instance.mediaPlayerCtrl.m_TargetMaterial = videoScreens[audioManager.audioClipIndex];
+        mediaPlayerCtrl.m_TargetMaterial = videoScreens[audioManager.audioClipIndex];
+
         videoScreens[audioManager.audioClipIndex].SetActive(true);
+        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
+        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().VideoScreenPlay();
     }
 
     IEnumerator FadeIn()
@@ -47,11 +52,11 @@ public class SceneManager : MonoBehaviour
             fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, fadeOverlay.color.a - (0.5F*Time.deltaTime));
             yield return new WaitForEndOfFrame();
         }
-//        Debug.Log("Fade In Complete");
     }
 
     public IEnumerator FadeOut(string levelToLoad)
     {
+        fading = true;
         while(fadeOverlay.color.a < 1)
         {
             fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, fadeOverlay.color.a + (0.5F * Time.deltaTime));
@@ -59,6 +64,7 @@ public class SceneManager : MonoBehaviour
         }
 //        Debug.Log("Fade Out Complete");
         yield return new WaitForSeconds(1);
+        fading = false;
         Application.LoadLevel(levelToLoad);
     }
 	

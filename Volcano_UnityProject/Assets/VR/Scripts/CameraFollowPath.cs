@@ -62,6 +62,7 @@ public class CameraFollowPath : MonoBehaviour
                     cameraMoveAlongPath = false;
                     sightControlScript.scanning = true;
                     SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].SetActive(true);
+                    SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
                     SceneManager.instance.mediaPlayerCtrl.m_strFileName = SceneManager.instance.videoFilePaths[SceneManager.instance.audioManager.audioClipIndex];
                     SceneManager.instance.mediaPlayerCtrl.m_TargetMaterial = SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex];
                     if (SceneManager.instance.audioManager.audioClipIndex != 0 && SceneManager.instance.narrationEnabled == true)
