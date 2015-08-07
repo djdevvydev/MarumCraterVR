@@ -26,18 +26,17 @@ public class SceneManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            //If this object is not the singleton of "instance", destroy ourself
+            //If this object is not the singleton of "instance", destroy yourself
             Destroy(gameObject);
         }
         if(fadeOverlay == null)
         {
             fadeOverlay = GameObject.Find("FadePanel").GetComponent<Image>();
         }
+
         StartCoroutine("FadeIn");
 
-        videoScreens[audioManager.audioClipIndex].SetActive(true);
-        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
-        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().VideoScreenPlay();
+        
     }
 
     IEnumerator FadeIn()
@@ -48,6 +47,9 @@ public class SceneManager : MonoBehaviour
             fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, fadeOverlay.color.a - (0.5F*Time.deltaTime));
             yield return new WaitForEndOfFrame();
         }
+        videoScreens[audioManager.audioClipIndex].SetActive(true);
+        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
+        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().VideoScreenPlay();
     }
 
     public IEnumerator FadeOut(string levelToLoad)

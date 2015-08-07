@@ -17,7 +17,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>5.0.1f1</UnityVersion>
+    <UnityVersion>5.1.2f1</UnityVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -25,7 +25,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -54,6 +54,12 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -66,9 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3d_clouds\scripts\unlitsh.shader" />
-    <None Include="Assets\AWSUnitySDK\AWSCore\Resources\aws-unity-sdk-version-1.0.5.txt" />
-    <None Include="Assets\AWSUnitySDK\AWSCore\Resources\aws_endpoints.xml" />
-    <None Include="Assets\AWSUnitySDK\S3\Resources\aws-unity-sdk-version-1.0.5.txt" />
     <None Include="Assets\AltspaceVRLava\Shaders\LavaDisplacement.shader" />
     <None Include="Assets\ArtDependencies\Marmoset\Documentation\Beta.txt" />
     <None Include="Assets\ArtDependencies\Marmoset\Documentation\HDR.txt" />
@@ -220,26 +223,36 @@
     <None Include="Assets\Art_Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
     <None Include="Assets\Art_Shaders\Physical Shader.shader" />
     <None Include="Assets\Art_Shaders\TransparentDoubleSided.shader" />
-    <None Include="Assets\Cardboard\Legacy\Resources\GUIScreen.shader" />
-    <None Include="Assets\Cardboard\Legacy\Resources\SkyboxMesh.shader" />
-    <None Include="Assets\Cardboard\Resources\RadialUndistortionEffect.shader" />
-    <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
     <None Include="Assets\DarkArts Studios\Screenshot Creator\changes.txt" />
     <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
     <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
     <None Include="Assets\EasyMovieTexture\readme.txt" />
-    <None Include="Assets\OVR\Moonlight\Materials\GlobalMenu\OVRCutoutRamp.shader" />
-    <None Include="Assets\OVR\Moonlight\Shaders\Unlit Crosshair.shader" />
-    <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
-    <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
-    <None Include="Assets\OVR\Shaders\Unlit Transparent HUD.shader" />
-    <None Include="Assets\Plugins\Android\AndroidManifest 1.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
-    <None Include="Assets\Plugins\Legacy\Android\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\donotdelete.txt" />
-    <None Include="Assets\Plugins\x86\donotdelete.txt" />
-    <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\bin\R.txt" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\res\layout\tango_ux_exceptions.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\res\values-v11\styles.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\res\values-v14\styles.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\UnityUxHelper\res\values\styles.xml" />
+    <None Include="Assets\Plugins\Android\google-unity-wrapper\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\google-unity-wrapper\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-java-lib\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-java-lib\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-unity-helper\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-unity-helper\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\bin\R.txt" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\exception_component.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\layout_connection.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\layout_splash.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\layout\layout_tango_ux.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\colors.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\dimens.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\tango-ux-support-library\res\values\styles.xml" />
     <None Include="Assets\ShaderForge\Example Assets\Shaders\Cubemaps.shader" />
     <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightCone.shader" />
@@ -257,6 +270,7 @@
     <None Include="Assets\Sohail_LavaShader_Work\Shaders\HeatHaze.shader" />
     <None Include="Assets\Sohail_LavaShader_Work\Shaders\HeatHazeBroken.shader" />
     <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
+    <None Include="Assets\TangoPrefabs\Shaders\PointCloud.shader" />
     <None Include="Assets\Tutorial_Assets\Models\Materials\DT_BumpedSpecular.shader" />
     <None Include="Assets\Tutorial_Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>

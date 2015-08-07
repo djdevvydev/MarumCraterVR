@@ -54,7 +54,7 @@ extern "C" __attribute__((visibility ("default"))) NSString *const kUnityViewDid
 }
 
 - (void)resizeView {
-   /* //FIXME Orientation?�変?�さ?�た?�に?�ま?�リ?�イ?�さ?�て?�な??view frame?�新
+   /* //FIXME Orientationが変更された時にうまくリサイズされていない view frame更新
 
     CGFloat scale = UnityGetGLView().contentScaleFactor;
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
@@ -167,13 +167,15 @@ extern "C" void VideoPlayerPluginDestroyInstance(int iID)
         if(_Player[iID]->player)
         {
             [_Player[iID]->player unloadPlayer];
-            [_Player[iID]->player dealloc];
+            //[_Player[iID]->player dealloc];
+            _Player[iID]->player  = NULL;
+            
             
         }
         
         
-        [_Player[iID] dealloc];
-	_Player[iID]=NULL;
+        //[_Player[iID] dealloc];
+        _Player[iID] = NULL;
         
     }
     
@@ -249,7 +251,7 @@ extern "C" void VideoPlayerPluginRewindVideo(int iID) {
     if (_GetPlayer(iID)->view) {
         [_GetPlayer(iID)->player rewind];
     } else {
-        //FIXME Texture?�Rewind?�る?�既?�読?�込?�れ?�も??��表示?�れ?�い??��Unity?�でRewind??��?�な?�よ?�に?�て?�る
+        //FIXME TextureでRewindすると既に読み込まれたものは表示されないのでUnity側でRewindは行わないようにしている
     }
 }
 extern "C" bool VideoPlayerPluginCanOutputToTexture(const char *videoURL) {
@@ -285,7 +287,16 @@ extern "C" void VideoPlayerPluginExtents(int iID,int *w, int *h) {
     *h = (int) sz.height;
 }
 
-extern "C" int VideoPlayerPluginCurFrameTexture(int iID) {
+
+extern "C" void VideoPlayerPluginSetTexture(int iID,int iTextureID)
+{
+    if(iID < 0 || iID >= PLAYER_MAX)
+        return;
+    
+    [_GetPlayer(iID)->player setTextureID:iTextureID];
+}
+
+extern "C" intptr_t VideoPlayerPluginCurFrameTexture(int iID) {
 
     if(iID < 0 || iID >= PLAYER_MAX)
         return 0;

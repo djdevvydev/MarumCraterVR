@@ -10,6 +10,12 @@ public class VideoScreen : MonoBehaviour {
     public GameObject playButton;
     public GameObject pauseButton;
     Vector3 currentScale;
+
+    [SerializeField]
+    GameObject trailPoints;
+
+    public MediaPlayerCtrl mediaControlScr;
+
     Vector3 targetIncreasedScale = new Vector3(22F, 13F, 1.0F);
     Vector3 targetDecreasedScale = new Vector3(1.0F, 1.0F, 1.0F);
 
@@ -18,6 +24,7 @@ public class VideoScreen : MonoBehaviour {
     public void GrowVideoScreen()
     {
         StartCoroutine("FadeIn");
+        trailPoints.SetActive(false);
     }
 
     public void FadeVideoScreen()
@@ -59,27 +66,28 @@ public class VideoScreen : MonoBehaviour {
     public void VideoScreenPlay()
     {
         SceneManager.instance.audioManager.vrAudioSource.Pause();
-        GetComponent<MediaPlayerCtrl>().Load(fileToPlay);
-        GetComponent<MediaPlayerCtrl>().Play();
+        mediaControlScr.Load(fileToPlay);
+        mediaControlScr.Play();
         playButton.SetActive(false);
         pauseButton.SetActive(true);
+        trailPoints.SetActive(false);
         Debug.Log("Playing video on screen " + screenNumber);
     }
 
     public void VideoScreenPause()
     {
         Debug.Log("Paused video on screen " + screenNumber);
-        GetComponent<MediaPlayerCtrl>().Pause();
+        trailPoints.SetActive(true);
+        mediaControlScr.Pause();
         playButton.SetActive(true);
         pauseButton.SetActive(false);
 //        SceneManager.instance.mediaPlayerCtrl.Pause();
     }
-
     /*
     void OnGUI()
     {
         string text;
-        switch(GetComponent<MediaPlayerCtrl>().GetCurrentState())
+        switch (mediaControlScr.GetCurrentState())
         {
             case MediaPlayerCtrl.MEDIAPLAYER_STATE.NOT_READY:
                 text = "Not Ready";
@@ -93,10 +101,27 @@ public class VideoScreen : MonoBehaviour {
             case MediaPlayerCtrl.MEDIAPLAYER_STATE.STOPPED:
                 text = "STOPPED";
                 break;
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.END:
+                text = "END";
+                break;
+            case MediaPlayerCtrl.MEDIAPLAYER_STATE.PAUSED:
+                text = "PAUSED";
+                break;
             default:
-                text = "FELL THROUGH TO DEFAULT";
+                text = "No State? DEFAULT";
                 break;
         }
+        
         GUI.Box(new Rect(Screen.width /2 , Screen.height/2, 200, 30), text);
-    }*/
+        if (GUI.Button(new Rect(Screen.width / 3, Screen.height/3, 100, 100), "Load"))
+        {
+            mediaControlScr.Load("EasyMovieTexture");
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 4, Screen.height / 4, 100, 100), "Play"))
+        {
+            mediaControlScr.Play();
+        }
+     
+    }*/ 
 }

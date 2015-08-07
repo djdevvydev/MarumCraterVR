@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SpinEarth : MonoBehaviour {
-    Vector3 endRotate = new Vector3(28, 260, -17);
+//    Vector3 endRotate = new Vector3(28, 260, -17);
 
     float step;
     float speed = 10;

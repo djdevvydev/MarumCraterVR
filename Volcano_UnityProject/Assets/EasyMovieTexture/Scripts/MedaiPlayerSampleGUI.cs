@@ -51,6 +51,21 @@ public class MedaiPlayerSampleGUI : MonoBehaviour {
 		{
 		
 		}
+		
+		if( GUI.Button(new Rect(200,50,100,100),"SeekTo"))
+		{
+			scrMedia.SeekTo(10000);
+		}
+		
+		if( GUI.Button(new Rect(200,200,100,100),scrMedia.GetSeekPosition().ToString()))
+		{
+			
+		}
+	 	
+		if( GUI.Button(new Rect(200,350,100,100),scrMedia.GetDuration().ToString()))
+		{
+		
+		}
 	
 	
 

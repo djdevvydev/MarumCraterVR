@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Tango;
 
 public class CameraFollowPath : MonoBehaviour 
 {
@@ -11,6 +12,12 @@ public class CameraFollowPath : MonoBehaviour
 
     public int targetPathPoint = 0;
     public bool cameraMoveAlongPath = false;
+
+    public AudioClip windSound;
+    public AudioClip lavaSound;
+    public AudioClip rockFallSound;
+
+    public AudioSource environmentNoise;
 
     public Image empStateBuilding;
 
@@ -41,7 +48,7 @@ public class CameraFollowPath : MonoBehaviour
         transform.position = _currentPointOnPath.Current.position;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if(_currentPointOnPath == null || _currentPointOnPath.Current == null)
         {
@@ -62,11 +69,18 @@ public class CameraFollowPath : MonoBehaviour
                 {
                     speed = 5F;
                     transform.position = _currentPointOnPath.Current.position;
+
+                    GetComponent<CustomTangoController>().m_startPosition = _currentPointOnPath.Current.position;
+
                     cameraMoveAlongPath = false;
                     sightControlScript.scanning = true;
                     //Debug.Log("Reached our point!");
-                    SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].SetActive(true);
-                    SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
+                    if (SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex] != null)
+                    {
+                        SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].SetActive(true);
+                        SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
+                    }
+                    
                     if (SceneManager.instance.audioManager.audioClipIndex != 0 && SceneManager.instance.narrationEnabled == true)
                     {
                         //Load up the LOCATION audio clip from the audioManager using the audioIndex
@@ -74,9 +88,17 @@ public class CameraFollowPath : MonoBehaviour
                         //Begin playing audio
                         SceneManager.instance.audioManager.vrAudioSource.Play();
 //                        Debug.Log("Play LOCATION audio clip");
-                        if (SceneManager.instance.audioManager.audioClipIndex == 1)
+                        PointSpecificRoutinesCheck();
+                    }
+                    if (SceneManager.instance.audioManager.audioClipIndex >= 6)
+                    {
+                        TurnOnLastPoints();
+                        SceneManager.instance.narrationEnabled = false;
+                        if (SceneManager.instance.audioManager.audioClipIndex > 6)
                         {
-                            StartCoroutine("EmpireStateBuilding");
+                            Debug.Log("turn off " + _currentPointOnPath.Current.name);
+                            _currentPointOnPath.Current.gameObject.SetActive(false);
+                            _currentPointOnPath.Current.GetComponent<BoxCollider>().enabled = false;
                         }
                     }
                 }
@@ -89,7 +111,52 @@ public class CameraFollowPath : MonoBehaviour
 
         
     }   
+
+    void PointSpecificRoutinesCheck()
+    {
+        if (SceneManager.instance.audioManager.audioClipIndex == 1)
+        {
+            StartCoroutine("EmpireStateBuilding");
+        }
+        else if (SceneManager.instance.audioManager.audioClipIndex == 2)
+        {
+            StartCoroutine("RockFall");
+        }
+        else if(SceneManager.instance.audioManager.audioClipIndex == 4)
+        {
+            environmentNoise.clip = lavaSound;
+            environmentNoise.volume = 1.0F;
+        }
+        else if(SceneManager.instance.audioManager.audioClipIndex > 6)
+        {
+            environmentNoise.clip = windSound;
+            environmentNoise.volume = 0.04F;
+        }
+
+    }
+
+    IEnumerator RockFall()
+    {
+        yield return new WaitForSeconds(24.0F);
+        environmentNoise.clip = rockFallSound;
+        float oldVolume = environmentNoise.volume;
+        environmentNoise.volume = 1;
+        yield return new WaitForSeconds(10.0F);
+        environmentNoise.clip = windSound;
+        environmentNoise.volume = oldVolume;
+
+    }
 	
+    void TurnOnLastPoints()
+    {
+        for(int i = 72; i < 75; i++)
+        {
+            path.points[i].gameObject.SetActive(true);
+
+            path.points[i].gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
+    }
+
     IEnumerator EmpireStateBuilding()
     {
         yield return new WaitForSeconds(22.0F);

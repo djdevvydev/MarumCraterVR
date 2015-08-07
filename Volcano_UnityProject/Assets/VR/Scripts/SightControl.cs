@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Tango;
 
 public class SightControl : MonoBehaviour 
 {
     public bool scanning;
+
+   
+    public GameObject tangoManager;
 
     [SerializeField]
     Image gazeTimerImage;
@@ -16,9 +20,6 @@ public class SightControl : MonoBehaviour
 
     [SerializeField]
     PathDefinition pathDefScript;
-
-    [SerializeField]
-    CardboardHead cardboardHead;
 
     [SerializeField]
     GameObject currentTarget;
@@ -44,11 +45,10 @@ public class SightControl : MonoBehaviour
                 case InteractableInfo.InteractableType.VideoPlay:
                     //Debug.Log("VideoScreen");
                     currentTarget.GetComponentInParent<VideoScreen>().VideoScreenPlay();
-                    currentTarget.GetComponentInParent<VideoScreen>().pauseButton.SetActive(true);
                     scanning = true;
                     break;
                 case InteractableInfo.InteractableType.VideoPause:
-                    //Debug.Log("VideoScreen");
+                    Debug.Log("VideoScreenPause");
                     currentTarget.GetComponentInParent<VideoScreen>().VideoScreenPause();
                     scanning = true;
                     break;
@@ -59,8 +59,13 @@ public class SightControl : MonoBehaviour
                     pathDefScript.pathDirection = targetPathPoint > camFollowPathScript.targetPathPoint ? 1 : -1;
                     camFollowPathScript.speed = currentTarget.GetComponent<TrailPoint>().travelSpeed; //Set the travelSpeed based on the trail point
                     camFollowPathScript.targetPathPoint = targetPathPoint; //Tell the camera the target path point we want to hit
+                    
+                    //Disable motion tracking?
+                        
+
                     camFollowPathScript.cameraMoveAlongPath = true; //Start moving
-                    //If a video is playing, stop playback
+
+                    if (SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex] != null)
                     SceneManager.instance.videoScreens[SceneManager.instance.audioManager.audioClipIndex].GetComponent<VideoScreen>().FadeVideoScreen();
                     //If audio is playing, stop playback
                     if (SceneManager.instance.audioManager.vrAudioSource.isPlaying)
@@ -71,13 +76,18 @@ public class SightControl : MonoBehaviour
                     if(SceneManager.instance.narrationEnabled == true)
                     {
                         //Load up the trail audio clip in the audioManager using the audioIndex
+                        if(pathDefScript.pathDirection == -1)
+                        {
+                            SceneManager.instance.audioManager.audioClipIndex -= 1;
+                        }
                         SceneManager.instance.audioManager.vrAudioSource.clip = SceneManager.instance.audioManager.trailAudioClips[SceneManager.instance.audioManager.audioClipIndex];
                         //Begin playing audio
+                        if(pathDefScript.pathDirection == 1)
+                        {
+                            SceneManager.instance.audioManager.audioClipIndex += 1;
+                        }
                         SceneManager.instance.audioManager.vrAudioSource.Play();
-//                        Debug.Log("Play TRAIL audio clip");
                     }
-//                    Debug.Log("Direction = " + pathDefScript.pathDirection);
-                    SceneManager.instance.audioManager.audioClipIndex += pathDefScript.pathDirection;
             
                     break;
                 case InteractableInfo.InteractableType.MenuItemStart:
@@ -99,9 +109,15 @@ public class SightControl : MonoBehaviour
 	    if(scanning)
         {
             RaycastHit hit;
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
-            if(Physics.Raycast(cardboardHead.Gaze, out hit)) //Did our Raycast hit something?
+
+            Vector3 rayDirection = Camera.main.transform.TransformDirection(Vector3.forward);
+            Vector3 rayStart = Camera.main.transform.position;
+            //Debug.DrawRay(rayStart, rayDirection * 100, Color.green);
+            if (Physics.Raycast(rayStart, rayDirection, out hit)) //Gear/Tango version
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.blue  );
+            //if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000.0F))
             {
+                //Debug.Log("Hit: " + hit.collider.name);
                 currentTarget = hit.collider.gameObject;
                 if(currentTarget != lastTarget) //Looking at something new...
                 {
