@@ -33,7 +33,7 @@ public class SceneManager : MonoBehaviour
         {
             fadeOverlay = GameObject.Find("FadePanel").GetComponent<Image>();
         }
-
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         StartCoroutine("FadeIn");
 
         

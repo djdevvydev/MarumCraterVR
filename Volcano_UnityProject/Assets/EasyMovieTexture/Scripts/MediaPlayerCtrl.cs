@@ -283,7 +283,7 @@ public class MediaPlayerCtrl : MonoBehaviour {
 			{
 				if(OnEnd != null)
 					OnEnd();
-				
+                SceneManager.instance.videoScreens[0].GetComponent<VideoScreen>().VideoScreenPause();
 				if(m_bLoop == true)
 				{
 					Call_Play(0);
