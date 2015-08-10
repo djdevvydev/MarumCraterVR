@@ -13,6 +13,8 @@ public class SceneManager : MonoBehaviour
 
     public bool fading;
 
+    GameObject firstTrailSign;
+
     public AudioManager audioManager;
 
     public GameObject[] videoScreens;
@@ -49,7 +51,11 @@ public class SceneManager : MonoBehaviour
         }
         videoScreens[audioManager.audioClipIndex].SetActive(true);
         videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().GrowVideoScreen();
-        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().VideoScreenPlay();
+        //videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().VideoScreenPlay();
+        //Debug.Log("Play video...wait for 5 seconds");
+        yield return new WaitForSeconds(30.0F);
+        //Debug.Log("Set Trail Points Active*******************************");
+        videoScreens[audioManager.audioClipIndex].GetComponent<VideoScreen>().trailPoints.SetActive(true);  
     }
 
     public IEnumerator FadeOut(string levelToLoad)

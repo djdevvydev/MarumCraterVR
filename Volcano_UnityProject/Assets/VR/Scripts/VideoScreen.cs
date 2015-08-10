@@ -11,8 +11,7 @@ public class VideoScreen : MonoBehaviour {
     public GameObject pauseButton;
     Vector3 currentScale;
 
-    [SerializeField]
-    GameObject trailPoints;
+    public GameObject trailPoints;
 
     public MediaPlayerCtrl mediaControlScr;
 
@@ -34,6 +33,7 @@ public class VideoScreen : MonoBehaviour {
 
     IEnumerator FadeOut()
     {
+        VideoScreenPause();
         //int scaleFactor = 100;
         //transform.localScale = targetDecreasedScale;
         Debug.Log("Decrease size of screen " + screenNumber);

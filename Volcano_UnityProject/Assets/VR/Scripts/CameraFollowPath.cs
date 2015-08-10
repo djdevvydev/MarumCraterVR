@@ -159,7 +159,7 @@ public class CameraFollowPath : MonoBehaviour
 
     IEnumerator EmpireStateBuilding()
     {
-        yield return new WaitForSeconds(22.0F);
+        yield return new WaitForSeconds(14.0F);
         
         while(empStateBuilding.fillAmount < 1)
         {

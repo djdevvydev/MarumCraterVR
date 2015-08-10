@@ -59,9 +59,6 @@ public class SightControl : MonoBehaviour
                     pathDefScript.pathDirection = targetPathPoint > camFollowPathScript.targetPathPoint ? 1 : -1;
                     camFollowPathScript.speed = currentTarget.GetComponent<TrailPoint>().travelSpeed; //Set the travelSpeed based on the trail point
                     camFollowPathScript.targetPathPoint = targetPathPoint; //Tell the camera the target path point we want to hit
-                    
-                    //Disable motion tracking?
-                        
 
                     camFollowPathScript.cameraMoveAlongPath = true; //Start moving
 
